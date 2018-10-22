@@ -23,7 +23,7 @@ public class ContaInvestimento extends Conta {
 	
 	@Override
 	public void render() {
-		this.saldo = this.saldo * 1.5f ;
+		this.saldo = this.saldo * 1.05f ;
 	}
 	
 	public float getSaldo() {

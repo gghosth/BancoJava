@@ -12,7 +12,7 @@ public class ContaPoupanca extends Conta {
 	
 	@Override
 	public void depositar(float valor) {
-		this.saldo = this.saldo + (valor * 1.1f);
+		this.saldo = this.saldo + (valor * 1.01f);
 		
 	}
 	
