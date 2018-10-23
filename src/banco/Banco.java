@@ -30,7 +30,7 @@ public class Banco {
 	public Correntista buscarCorrentistaCpf(String cpf) {
 		Correntista resultado = null;
 		for(Correntista correntista : Banco.correntistas) {
-			if(Correntista.getCpf().equals(cpf)) {
+			if(correntista.getCpf().equals(cpf)) {
 				resultado = correntista;
 				break;
 			}

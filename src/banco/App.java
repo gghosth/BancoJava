@@ -124,13 +124,15 @@ public class App {
 		}
 		
 	
-	System.out.println("Digite seu cpf para buscar na coleção");
+	System.out.println("Digite seu cpf para buscar na coleção:");
 	sc1.nextLine();
 	String cpfbusca = sc1.next();
 	
-	Conta cteste = banco.buscarContaCpf(cpfbusca);
-		System.out.println(cteste.getnumConta());
-
+	Conta conteste = banco.buscarContaCpf(cpfbusca);
+		System.out.println(conteste.getnumConta());
+		
+	Correntista corrteste = banco.buscarCorrentistaCpf(cpfbusca);
+		System.out.println(corrteste.getNome());
 	
 	}
 	

@@ -6,8 +6,8 @@ public class Correntista {
 	
 	private String nome;
 	
-	private static String Cpf;
-	
+	private String Cpf;
+
 	
 	public Correntista(String Nome, String CPF) {
 
@@ -35,9 +35,9 @@ public class Correntista {
 	}
 	
 	
-	public static String getCpf() {
+	public String getCpf() {
 		
-		return Correntista.Cpf;
+		return this.Cpf;
 	}
 	
 }
