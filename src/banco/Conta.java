@@ -3,6 +3,10 @@ public abstract class Conta {
 	
 	private float saldo;
 	
+	private int numConta;
+	
+	private String CPF;
+	
 	protected void setSaldo(float valor) {
 		this.saldo = valor;
 	}
@@ -11,6 +15,15 @@ public abstract class Conta {
 	public float getSaldo() {
 		return this.saldo;
 	}
+	
+	public int getnumConta() {
+		return this.numConta;
+	}
+	
+	public String getCpf() {
+		return this.CPF;
+	}
+	
 	
 	public abstract void depositar(float valor);
 	

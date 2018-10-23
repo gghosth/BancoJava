@@ -4,10 +4,14 @@ public class ContaInvestimento extends Conta {
 
 	private float saldo;
 	
+	private int numConta;
 	
-	public ContaInvestimento(float valorInicial) {
+	private String CPF;
+	
+	public ContaInvestimento(float valorInicial, int NumConta, String Cpf) {
 		this.saldo = valorInicial;
-		
+		this.numConta = NumConta;
+		this.CPF = Cpf;
 	}
 	
 	@Override
@@ -31,5 +35,12 @@ public class ContaInvestimento extends Conta {
 		
 	}
 	
+	public int getnumConta() {
+		return this.numConta;
+	}
+	
+	public String getCpf() {
+		return this.CPF;
+	}
 	
 }

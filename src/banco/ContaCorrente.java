@@ -4,9 +4,14 @@ public class ContaCorrente extends Conta {
 
 	private float saldo;
 	
+	private int numConta;
 	
-	public ContaCorrente(float valorInicial) {
-		this.saldo = valorInicial;		
+	private  String CPF;
+	
+	public ContaCorrente(float valorInicial, int NumConta, String Cpf) {
+		this.saldo = valorInicial;
+		this.numConta = NumConta;
+		this.CPF = Cpf;
 	}
 	
 	@Override
@@ -29,6 +34,14 @@ public class ContaCorrente extends Conta {
 	public float getSaldo() {
 		return this.saldo;
 		
+	}
+	
+	public int getnumConta() {
+		return this.numConta;
+	}
+	
+	public String getCpf() {
+		return this.CPF;
 	}
 	
 	
