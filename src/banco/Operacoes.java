@@ -4,36 +4,26 @@ public class Operacoes {
 
 	
 	
-	public float adicionarValor(float Valor, Conta c1) {
+	public void adicionarValor(float Valor, int numConta, Banco banco) {
 		
-		float ValorTot = 0;
+		Conta c = banco.buscarConta(numConta);
 		
-		ValorTot = c1.getSaldo();
-		
-		ValorTot = ValorTot + Valor;
-		
-		
-		
-		
-		
-		return (ValorTot);
+		c.depositar(Valor);
+			
+		System.out.println("O valor foi depositado.");
 		
 	}
 	
 	
 	
-	public float retirarValor(float Valor, Conta c1) {
+	public void retirarValor(float Valor, int numConta, Banco banco) {
 		
-		float ValorTot = 0;
+		Conta c = banco.buscarConta(numConta);
 		
-		ValorTot = c1.getSaldo();
+		c.retirar(Valor);
+			
+		System.out.println("O valor foi retirado.");
 		
-		ValorTot = ValorTot - Valor;
-		
-		
-		
-		
-		return (ValorTot);
 		
 	}
 	

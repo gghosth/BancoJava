@@ -8,10 +8,13 @@ public class ContaInvestimento extends Conta {
 	
 	private String CPF;
 	
+	private String tipoConta;
+	
 	public ContaInvestimento(float valorInicial, int NumConta, String Cpf) {
 		this.saldo = valorInicial;
 		this.numConta = NumConta;
 		this.CPF = Cpf;
+		this.tipoConta = "investimento";
 	}
 	
 	@Override
@@ -41,6 +44,10 @@ public class ContaInvestimento extends Conta {
 	
 	public String getCpf() {
 		return this.CPF;
+	}
+	
+	public String getTipo() {
+		return this.tipoConta;
 	}
 	
 }

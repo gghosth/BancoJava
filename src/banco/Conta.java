@@ -7,6 +7,8 @@ public abstract class Conta {
 	
 	private String CPF;
 	
+	private String tipoConta;
+	
 	protected void setSaldo(float valor) {
 		this.saldo = valor;
 	}
@@ -24,6 +26,9 @@ public abstract class Conta {
 		return this.CPF;
 	}
 	
+	public String getTipo() {
+		return this.tipoConta;
+	}
 	
 	public abstract void depositar(float valor);
 	
@@ -35,5 +40,7 @@ public abstract class Conta {
 		this.retirar(valor);
 		outraConta.depositar(valor);
 	}
+	
+	
 	
 }

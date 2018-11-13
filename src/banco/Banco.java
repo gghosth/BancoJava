@@ -40,6 +40,47 @@ public class Banco {
 	}
 	
 	
+	public boolean buscarCpfCorrentista(String cpf) {
+		for(Correntista correntista : Banco.correntistas) {
+			if(correntista.getCpf().equals(cpf)) {
+				return(true);
+			}
+					
+		}
+		return (false);
+	}
+	
+	public boolean buscarNumConta(int numConta) {
+		for(Conta conta : Banco.contas) {
+			if(conta.getnumConta() == (numConta)) {
+				return(true);
+			}
+					
+		}
+		return (false);
+	}
+	
+	public Conta buscarConta(int numConta) {
+		Conta cont = null;
+		for(Conta conta : Banco.contas) {
+			if(conta.getnumConta() == (numConta)) {
+				cont = conta;
+			}
+					
+		}
+		return (cont);
+	}
+	
+	public String buscarTipoConta(int numConta) {
+		String tipo = null;
+		for(Conta conta : Banco.contas) {
+			if(conta.getnumConta() == (numConta)) {
+				tipo = conta.getTipo();
+			}
+					
+		}
+		return (tipo);
+	}
 	
 	public void adicionarConta(Conta conta) {
 		Banco.contas.add(conta);

@@ -3,24 +3,25 @@ package banco;
 public class Criador {
 
 	
-	public void novoBanco() {
+	public Banco novoBanco() {
 		
 		
 	 Banco banco = new Banco();
 		
 	
+	 return (banco);
 	}
 	
 	
-	public void novoCorrentista(String Nome, String CPF) {
+	public Correntista novoCorrentista(String Nome, String CPF) {
 		
 	
 		
 		Correntista c1 = new Correntista(Nome, CPF);
 		
-		banco.adicionarCorrentista(c1);
+	//	banco.adicionarCorrentista(c1);
 		
-		
+		return (c1);
 		
 	}
 	
@@ -32,7 +33,7 @@ public class Criador {
 		Conta cp = new ContaPoupanca(0, numeroConta, CPF);
 		
 		
-		banco.adicionarConta(cp);
+	//	banco.adicionarConta(cp);
 		
 		return (cp);
 	}
@@ -45,7 +46,7 @@ public class Criador {
 		Conta cc = new ContaCorrente(0, numeroConta, CPF);
 		
 		
-		banco.adicionarConta(cc);
+	//	banco.adicionarConta(cc);
 		
 		return (cc);
 	}
@@ -56,7 +57,7 @@ public class Criador {
 		
 		Conta ci = new ContaInvestimento(0, numeroConta, CPF);
 		
-		banco.adicionarConta(ci);
+	//	banco.adicionarConta(ci);
 		
 		
 		return (ci);
