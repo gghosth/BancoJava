@@ -5,17 +5,20 @@ import java.util.Scanner;
 
 public class App {
 	
-	static Banco banco = new Banco();
-
+	static Criador criador = new Criador();
+	
+	static Operacoes ops = new Operacoes();
+	//static Banco banco = new Banco();
+	
 	public static int numConta = 3000000;
 	
 	private static Scanner sc1;
 
-	private static Scanner sc2;
+//	private static Scanner sc2;
 
 	public static void main (String[] args) {
 		
-		
+		criador.novoBanco();
 		
 /*		Conta cc = new ContaCorrente(1000);
 		Conta cp = new ContaPoupanca(1000);
@@ -62,7 +65,7 @@ public class App {
 	System.out.println("Bem vindo ao programa do banco, o que deseja fazer?");
 	System.out.println("Digite 1 para criar conta, 2 para editar e 3 para sair: ");
 	sc1 = new Scanner (System.in);
-	sc2 = new Scanner (System.in);
+	//	sc2 = new Scanner (System.in);
 	int i = sc1.nextInt();
 	
 	switch(i) {
@@ -74,10 +77,12 @@ public class App {
 		String nm = sc1.next();
 		sc1.nextLine();
 		System.out.println("Digite seu CPF:");
-		String cpf = sc2.next();
-		sc2.nextLine();
-		Correntista c1 = new Correntista(nm, cpf);
-		banco.adicionarCorrentista(c1);
+		String cpf = sc1.next();
+		sc1.nextLine();
+		criador.novoCorrentista(nm, cpf);
+		
+	//	Correntista c1 = new Correntista(nm, cpf);
+	//	banco.adicionarCorrentista(c1);
 		
 		System.out.println("Qual tipo de conta? 1 para corrente, 2 para poupança e 3 para Investimento:");
 	
@@ -86,22 +91,25 @@ public class App {
 		switch(choose) {
 		
 		case 1:
-			Conta cc = new ContaCorrente(0, numConta, cpf);
+	//		Conta cc = new ContaCorrente(0, numConta, cpf);
+			criador.novaContaCorrente(0, numConta, cpf);
 			numConta++;
-			banco.adicionarConta(cc);
+		
 
 			break;
 			
 		case 2:
-			Conta cp = new ContaPoupanca(0, numConta, cpf);
+			//Conta cp = new ContaPoupanca(0, numConta, cpf);
+			criador.novaContaPoupanca(0, numConta, cpf);
 			numConta++;
-			banco.adicionarConta(cp);
+			
 			break;
 			
 		case 3:
-			Conta ci = new ContaInvestimento(0, numConta, cpf);
+			//Conta ci = new ContaInvestimento(0, numConta, cpf);
+			criador.novaContaInvestimento(0, numConta, cpf);
 			numConta++;
-			banco.adicionarConta(ci);
+			
 			break;
 		
 		}
@@ -109,10 +117,112 @@ public class App {
 		
 		
 	break;
-		
+	
+	
 		
 	case 2:
 	
+		System.out.println("Digite qual seu tipo de conta: 1 para corrente, 2 para poupança e 3 para investimento");
+		
+		int o = sc1.nextInt();
+		
+		switch(o) {
+		
+		case 1:
+			System.out.println("O que deseja fazer na sua conta? 1 para depositar, 2 para retirar.");
+			
+			int p = sc1.nextInt();
+			
+			switch(p) {
+			
+			case 1:
+				System.out.println("Qual a quantia do depósito?");
+				
+				float Valor = sc1.nextFloat();
+				
+				ops.adicionarValor(Valor, cc);
+				
+				break;
+				
+			case 2:
+				System.out.println("Qual a quantia que deseja retirar?");
+				
+				float Valor1 = sc1.nextFloat();
+				
+				ops.retirarValor(Valor1, cc)
+				
+				break;
+				
+			
+			}
+			
+			break;
+			
+		case 2:
+			System.out.println("O que deseja fazer na sua conta? 1 para depositar, 2 para retirar.");
+			
+			int q = sc1.nextInt();
+			
+			switch(q) {
+			
+			case 1:
+				System.out.println("Qual a quantia do depósito?");
+				
+				float Valor = sc1.nextFloat();
+				
+				ops.adicionarValor(Valor, cp);
+				
+				break;
+				
+			case 2:
+				System.out.println("Qual a quantia que deseja retirar?");
+				
+				float Valor1 = sc1.nextFloat();
+				
+				ops.retirarValor(Valor1, cp)
+				
+				break;
+				
+			}
+			
+			break;
+			
+		case 3:
+			int r = sc1.nextInt();
+			
+			switch(r) {
+			
+			case 1:
+				System.out.println("Qual a quantia do depósito?");
+				
+				float Valor = sc1.nextFloat();
+				
+				ops.adicionarValor(Valor, ci);
+				
+				break;
+				
+			case 2:
+				System.out.println("Qual a quantia que deseja retirar?");
+				
+				float Valor1 = sc1.nextFloat();
+				
+				ops.retirarValor(Valor1, ci);
+				
+				break;
+				
+			case 3:
+				System.out.println("Sua conta irá render.");
+				
+				
+				
+				break;
+			
+			}
+			break;
+		
+		}
+		
+		
 	break;	
 		
 		
@@ -124,7 +234,7 @@ public class App {
 		}
 		
 	
-	System.out.println("Digite seu cpf para buscar na coleção:");
+/*	System.out.println("Digite seu cpf para buscar na coleção:");
 	sc1.nextLine();
 	String cpfbusca = sc1.next();
 	
@@ -133,7 +243,7 @@ public class App {
 		
 	Correntista corrteste = banco.buscarCorrentistaCpf(cpfbusca);
 		System.out.println(corrteste.getNome());
-	
+	*/
 	}
 	
 }
